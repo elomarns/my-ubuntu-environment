@@ -18,7 +18,7 @@ sudo apt install -y \
 	redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev
 
 # Run installers.
-for installer in install/*.sh; do source $installer; done
+for installer in ~/Dropbox/Projetos/Ambiente/my-ubuntu-environment/install/*.sh; do source $installer; done
 
 # Upgrade everything that might ask for a reboot last.
 sudo apt upgrade -y
