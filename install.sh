@@ -1,6 +1,10 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
+# Sets the variables if they don't exist.
+[ -z "$MY_ENVIRONMENT_DIR" ] && export MY_ENVIRONMENT_DIR=$HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment
+[ -z "$MY_ENVIRONMENT_CONFIG_DIR" ] && export MY_ENVIRONMENT_CONFIG_DIR=$MY_ENVIRONMENT_DIR/config
+
 # This is needed for all installers.
 sudo apt update -y
 sudo apt install -y curl git unzip
@@ -18,7 +22,7 @@ sudo apt install -y \
 	redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev
 
 # Run installers.
-for installer in ~/Dropbox/Projetos/Ambiente/my-ubuntu-environment/install/*.sh; do source $installer; done
+for installer in $MY_ENVIRONMENT_DIR/install/*.sh; do source $installer; done
 
 # Upgrade everything that might ask for a reboot last.
 sudo apt upgrade -y
