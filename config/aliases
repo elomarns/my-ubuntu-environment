@@ -1,0 +1,97 @@
+# Aliases for ls.
+alias ls="ls -AlhF --color=auto"
+alias lsr="ls -lRh"
+alias lsdot="ls -lhd .*"
+
+# Always create the parent directory if it doesn't exist.
+alias mkdir="mkdir -p"
+
+# Remove recursively and without confirmation.
+alias rm="rm -rf"
+
+# Colorizing grep.
+alias grep="grep --color"
+
+# Search on history.
+search_history()
+{
+  history | grep $1
+}
+alias hs=search_history
+
+# Show hosts file.
+alias hosts="cat /etc/hosts"
+
+# Alias for bat.
+alias bat="batcat"
+
+# Aliases for Git.
+alias g="git"
+alias gi="git init"
+alias gck="git checkout"
+alias gckm="git checkout master"
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gsh="git show HEAD"
+alias gl="git log"
+alias glol="git log --oneline"
+alias grh="git reset --hard"
+alias gp="git push"
+alias gpush="git push origin master"
+alias gf="git fetch"
+alias gpu="git pull"
+alias gpull="git pull origin master"
+
+# Aliases for bundler.
+alias b="bundle"
+alias bi="bundle install"
+alias bu="bundle update"
+alias be="bundle exec"
+alias bl="bundle list"
+alias binfo="bundle info"
+
+# Aliases for Rails.
+alias rs="bin/rails s"
+alias rc="bin/rails c"
+
+# Alias for basic web server.
+alias server="python -m http.server"
+
+# Alias for tldr.
+alias t="tldr"
+
+# Aliases for Docker.
+alias d="docker"
+alias db="docker build"
+alias dim="docker images"
+alias drmi="docker rmi"
+alias ds="docker start"
+alias dst="docker stop"
+alias dk="docker kill"
+alias drm="docker rm"
+alias dr="docker run"
+alias drrm="docker run --rm"
+alias de="docker exec"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dpsq="docker ps -q"
+
+# Aliases for Docker Compose.
+alias dc="docker compose"
+alias dcb="docker compose build"
+alias dcup="docker compose up"
+alias dcd="docker compose down"
+alias dcrun="docker compose run"
+alias dce="docker compose exec"
+
+# Aliases for text editors.
+alias st="subl"
+alias stt="subl ."
+alias c="code"
+alias cc="code ."
+alias editor="code"
+alias config="editor $MY_ENVIRONMENT_DIR"
+alias conf="config"

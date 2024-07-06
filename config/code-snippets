@@ -1,0 +1,28 @@
+# Set the code snippets directory.
+export CODE_SNIPPETS="$HOME/Dropbox/Code Snippets"
+
+# Create code snippet file.
+new_code_snippet()
+{
+  touch $CODE_SNIPPETS/$1
+  editor $CODE_SNIPPETS/$1
+}
+
+# Open code snippet on text editor.
+open_code_snippet_on_text_editor()
+{
+  editor "`find $CODE_SNIPPETS -not -path '*/\.*' -type f | grep -i -m 1 $1`"
+}
+
+# Show code snippet on terminal.
+show_code_snippet_on_terminal()
+{
+  bat "`find $CODE_SNIPPETS -not -path '*/\.*' -type f | grep -i -m 1 $1`"
+}
+
+# Add aliases.
+alias snippets="editor $CODE_SNIPPETS"
+alias snp=snippets
+alias nsnp=new_code_snippet
+alias snpe=open_code_snippet_on_text_editor
+alias sn=show_code_snippet_on_terminal

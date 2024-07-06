@@ -1,0 +1,28 @@
+# Set the notes directory.
+export NOTES_DIR="$HOME/Dropbox/Anotações"
+
+# Create note file.
+new_note()
+{
+  touch $NOTES_DIR/$1.md
+  editor $NOTES_DIR/$1.md
+}
+
+# Open note on text editor.
+open_note_on_text_editor()
+{
+  editor "`find $NOTES_DIR -not -path '*/\.*' -type f | grep -i -m 1 $1`"
+}
+
+# Show note on terminal.
+show_note_on_terminal()
+{
+  glow "`find $NOTES_DIR -not -path '*/\.*' -type f | grep -i -m 1 $1`"
+}
+
+# Add aliases.
+alias notes="editor $NOTES_DIR"
+alias nt=notes
+alias nn=new_note
+alias ne=open_note_on_text_editor
+alias n=show_note_on_terminal

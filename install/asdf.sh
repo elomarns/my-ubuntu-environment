@@ -20,6 +20,7 @@ ln -s $MY_ENVIRONMENT_CONFIG_DIR/.gemrc $HOME/.gemrc
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs latest
 asdf global nodejs latest
+npm install -g tldr
 
 # Install Python.
 asdf plugin-add python

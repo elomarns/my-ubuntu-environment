@@ -1,0 +1,20 @@
+# Set the PATH.
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Set the MANPATH.
+export MANPATH="/usr/local/man:$MANPATH"
+
+# Set the language.
+export LANG=en_US.UTF-8
+
+# Set the default text editor.
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR="vim"
+else
+  export EDITOR="code --wait"
+fi
+
+export SUDO_EDITOR="$EDITOR"
+
+# Set the Arch flags.
+export ARCHFLAGS="-arch x86_64"

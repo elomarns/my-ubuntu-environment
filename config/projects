@@ -1,0 +1,15 @@
+# Set the projects directory.
+export PROJECTS_DIR="$HOME/Dropbox/Projetos"
+
+# Open project on text editor.
+open_project_on_text_editor()
+{
+  PROJECT_DIR="`find $PROJECTS_DIR -maxdepth 4 -type d | grep -i -m 1 $1`"
+  cd $PROJECT_DIR
+  editor $PROJECT_DIR
+}
+
+# Add aliases.
+alias project=open_project_on_text_editor
+alias proj=project
+alias p=proj
