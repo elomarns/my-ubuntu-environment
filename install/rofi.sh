@@ -9,4 +9,5 @@ rm -rf rofi-themes-collection
 
 # Copy the configuration file.
 rm -rf $HOME/.config/rofi/config.rasi
+mkdir -p $HOME/.config/rofi
 ln -s $MY_ENVIRONMENT_CONFIG_DIR/rofi.rasi $HOME/.config/rofi/config.rasi
