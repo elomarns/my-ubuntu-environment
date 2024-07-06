@@ -25,6 +25,9 @@ alias hosts="cat /etc/hosts"
 # Alias for bat.
 alias bat="batcat"
 
+# Alias for fzf.
+alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
+
 # Aliases for Git.
 alias g="git"
 alias gi="git init"
