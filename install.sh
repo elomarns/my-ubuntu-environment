@@ -1,9 +1,18 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-# Sets the variables if they don't exist.
+# Set the main environment variables if they don't exist.
 [ -z "$MY_ENVIRONMENT_DIR" ] && export MY_ENVIRONMENT_DIR=$HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment
 [ -z "$MY_ENVIRONMENT_CONFIG_DIR" ] && export MY_ENVIRONMENT_CONFIG_DIR=$MY_ENVIRONMENT_DIR/config
+
+# Set my personal environment variables.
+echo "\nEnter your name: "
+read name
+export NAME=$name
+
+echo "Enter your email: "
+read email
+export EMAIL=$email
 
 # This is needed for all installers.
 sudo apt update -y
@@ -31,6 +40,6 @@ sudo apt upgrade -y
 gsettings set org.gnome.desktop.screensaver lock-enabled true
 gsettings set org.gnome.desktop.session idle-delay 300
 
-# Logging out to pickup changes.
+# Log out to pickup changes.
 echo "Logging out to pickup changes..."
 gnome-session-quit --logout --no-prompt
