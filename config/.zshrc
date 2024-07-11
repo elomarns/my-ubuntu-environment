@@ -24,7 +24,7 @@ source $MY_ENVIRONMENT_CONFIG_DIR/projects
 source $MY_ENVIRONMENT_CONFIG_DIR/notes
 
 # Add code snippets support.
-source $MY_ENVIRONMENT_CONFIG_DIR/code_snippets
+source $MY_ENVIRONMENT_CONFIG_DIR/code-snippets
 
 # Purging autojump database.
 j --purge
