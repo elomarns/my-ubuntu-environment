@@ -14,21 +14,19 @@ echo "Enter your email: "
 read email
 export EMAIL=$email
 
-# This is needed for all installers.
-sudo apt update -y
-sudo apt install -y curl git unzip
-
 # Ensure computer doesn't go to sleep or lock while installing.
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
 
 # Install essencial dependencies.
+sudo apt update -y
+sudo apt install -y curl git unzip
 sudo apt install -y \
-	build-essential pkg-config autoconf bison patch rustc cargo clang uuid-dev \
-	libssl-dev libreadline-dev libgmp-dev zlib1g-dev libyaml-dev libncurses5-dev \
-  libffi-dev libgdbm6 libgdbm-dev libdb-dev libjemalloc2 libvips \
+  curl git unzip build-essential pkg-config autoconf bison patch rustc cargo \
+  clang uuid-dev libssl-dev libreadline-dev libgmp-dev zlib1g-dev libyaml-dev \
+  libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev libjemalloc2 libvips \
   imagemagick libmagickwand-dev mupdf mupdf-tools \
-	redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev
+  redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev
 
 # Run installers.
 for installer in $MY_ENVIRONMENT_DIR/install/*.sh; do source $installer; done
