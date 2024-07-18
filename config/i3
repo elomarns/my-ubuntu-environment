@@ -1,0 +1,226 @@
+# Setting Window key as the mod.
+set $mod Mod4
+set $alt Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block.
+font pango:monospace 8
+
+# Start Gnome Control Center.
+bindsym $mod+comma exec gnome-control-center
+
+# Start rofi.
+bindsym $mod+d exec rofi -show drun
+
+# Create an Alacritty window.
+bindsym $mod+Return exec alacritty msg create-window || alacritty
+
+# Start Visual Studio Code.
+bindsym $mod+c exec code
+
+# Start Google Chrome.
+bindsym $mod+g exec google-chrome
+
+# Start Nautilus.
+bindsym $mod+n exec nautilus --no-desktop
+
+# Kill focused window.
+bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+bindsym $alt+F4 kill
+
+# Disable border on new windows.
+new_window none
+
+# Toggles the border around the window.
+bindsym $mod+b border toggle
+
+# Prevents the focus from changing to where the mouse is pointing.
+focus_follows_mouse no
+
+# Change focus.
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ccedilla focus right
+
+# Alternatively, you can use the cursor keys.
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window.
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ccedilla move right
+
+# Alternatively, you can use the cursor keys.
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Enter fullscreen mode for the focused container.
+bindsym $mod+f fullscreen toggle
+
+# Setting the tabbed layout as the default.
+workspace_layout tabbed
+
+# Change container layout.
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Split in horizontal orientation.
+bindsym $mod+h split h
+
+# Split in vertical orientation.
+bindsym $mod+v split v
+
+# Toggle tiling / floating.
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows.
+bindsym $mod+space focus mode_toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position.
+floating_modifier $mod
+
+# Popups and dialogs should float.
+for_window [window_role="(?i)pop-up"] floating enable, border normal
+for_window [window_role="conversation"] floating enable, border normal
+for_window [window_role="Msgcompose"] floating enable, border normal
+for_window [class="Zeal"] floating enable, border normal
+for_window [class="Zeal"] resize set 1600 900
+
+# Scratchpad.
+bindsym $mod+o scratchpad show
+bindsym $mod+Shift+o move scratchpad
+
+# Setting the positions of the monitors.
+exec xrandr --output HDMI-0 --auto --left-of DP-2
+
+# Setting external monitor as primary.
+exec xrandr --output HDMI-0 --primary
+
+# Disabling notebook's screen.
+exec xrandr --output DP-2 --off
+
+# Defining workspaces.
+set $terminal "1"
+set $editor "2"
+set $browser "3"
+set $files "4"
+set $images "5"
+
+# Switch to workspace.
+bindsym $mod+1 workspace $terminal
+bindsym $mod+2 workspace $editor
+bindsym $mod+3 workspace $browser
+bindsym $mod+4 workspace $files
+bindsym $mod+5 workspace $images
+
+# Assigning workspaces on specific screens.
+workspace $terminal output HDMI-0
+workspace $editor output HDMI-0
+workspace $browser output HDMI-0
+workspace $files output HDMI-0
+workspace $images output HDMI-0
+
+# Go to the next or previous workspace.
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# If you press again the command for the current workspace
+# you move to the workspace you were before.
+workspace_auto_back_and_forth yes
+
+# Move focused container to workspace.
+bindsym $mod+Shift+1 move container to workspace $terminal
+bindsym $mod+Shift+2 move container to workspace $editor
+bindsym $mod+Shift+3 move container to workspace $browser
+bindsym $mod+Shift+4 move container to workspace $files
+bindsym $mod+Shift+5 move container to workspace $images
+
+# Assign applications to specific workspaces.
+assign [class="Alacritty"] $terminal
+assign [class="Gnome-terminal"] $terminal
+assign [class="URxvt"] $terminal
+assign [class="Code"] $editor
+assign [class="Godot"] $editor
+assign [class="Sublime_text"] $editor
+assign [class="Atom"] $editor
+assign [class="Zeal"] $editor
+assign [class="Google-chrome"] $browser
+assign [class="Nautilus"] $files
+assign [class="Allegro"] $images
+assign [class="Gimp"] $images
+assign [class="piskel"] $images
+assign [class="tiled"] $images
+
+# Enter resize mode.
+bindsym $mod+r mode "resize"
+
+# Resize window (you can also use the mouse for that).
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode.
+
+  # Pressing j will shrink the window’s width.
+  # Pressing ç will grow the window’s width.
+  # Pressing l will shrink the window’s height.
+  # Pressing k will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym ccedilla resize grow width 10 px or 10 ppt
+
+  # Same bindings, but for the arrow keys.
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # Back to normal: Enter or Escape.
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# PrintScreen takes a screenshot.
+bindsym --release Print exec "scrot -s '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/Dropbox/Screenshots/'"
+bindsym Shift+Print exec flameshot gui
+
+# Locking.
+bindsym Control+Mod1+l exec i3lock -t -i ~/Dropbox/Wallpapers/gandalf-vs-balrog-small.png
+
+# Reload the configuration file.
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3).
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session).
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Launching polybar.
+exec_always --no-startup-id $HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment/scripts/launch-polybar.sh
+
+# Setting the wallpaper.
+exec feh --bg-scale $HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment/wallpapers/gandalf-vs-balrog.png
+
+# Starting some basic stuff.
+exec nm-applet
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,gpg,secrets
+
+# Starting Dropbox.
+exec dropbox start
+
+# Starting main applications.
+exec alacritty
+exec code
+exec google-chrome
+exec nautilus --no-desktop
+
+# Move focus to browser worskpace.
+exec i3-msg 'workspace 3:browser'
