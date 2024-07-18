@@ -5,6 +5,7 @@ wget -O fontawesome.zip https://use.fontawesome.com/releases/v6.5.2/fontawesome-
 unzip fontawesome.zip
 cp fontawesome-free-6.5.2-desktop/otfs/* ~/.local/share/fonts
 rm -rf fontawesome.zip fontawesome-free-6.5.2-desktop
+cd -
 
 # Function to install fonts from Nerd Fonts.
 install_nerd_font() {
