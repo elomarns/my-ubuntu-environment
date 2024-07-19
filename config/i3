@@ -196,7 +196,7 @@ bindsym --release Print exec "scrot -s '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' 
 bindsym Shift+Print exec flameshot gui
 
 # Locking.
-bindsym Control+Mod1+l exec i3lock -t -i ~/Dropbox/Wallpapers/gandalf-vs-balrog-small.png
+bindsym Control+Mod1+l exec $my_environment_scripts_dir/set-random-lock-screen.sh $my_environment_wallpapers_dir
 
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
