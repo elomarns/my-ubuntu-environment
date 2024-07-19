@@ -2,6 +2,10 @@
 set $mod Mod4
 set $alt Mod1
 
+# Set the directory where my scripts are.
+set $my_environment_scripts_dir $HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment/scripts
+set $my_environment_wallpapers_dir $HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment/wallpapers
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block.
 font pango:monospace 8
@@ -204,10 +208,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Launching polybar.
-exec_always --no-startup-id $HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment/scripts/launch-polybar.sh
+exec_always --no-startup-id $my_environment_scripts_dir/launch-polybar.sh
 
 # Setting the wallpaper.
-exec feh --bg-scale $HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment/wallpapers/gandalf-vs-balrog.png
+exec_always $my_environment_scripts_dir/set-random-wallpaper.sh $my_environment_wallpapers_dir
 
 # Starting some basic stuff.
 exec nm-applet
