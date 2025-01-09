@@ -27,7 +27,7 @@ sudo apt install -y \
   redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common
 
 # Run installers.
-for installer in $MY_ENVIRONMENT_DIR/install/*.sh; do source $installer; done
+for installer in $MY_ENVIRONMENT_DIR/installers/*.sh; do source $installer; done
 
 # Upgrade everything that might ask for a reboot last.
 sudo apt upgrade -y
