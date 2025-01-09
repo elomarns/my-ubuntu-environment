@@ -20,13 +20,11 @@ gsettings set org.gnome.desktop.session idle-delay 0
 
 # Install essencial dependencies.
 sudo apt update -y
-sudo apt install -y curl git unzip
 sudo apt install -y \
-  curl git unzip build-essential pkg-config autoconf bison patch rustc cargo \
-  clang uuid-dev libssl-dev libreadline-dev libgmp-dev zlib1g-dev libyaml-dev \
-  libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev libjemalloc2 libvips \
-  imagemagick libmagickwand-dev mupdf mupdf-tools \
-  redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev
+  curl git unzip build-essential pkg-config autoconf bison clang rustc \
+  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 \
+  libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 \
+  redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common
 
 # Run installers.
 for installer in $MY_ENVIRONMENT_DIR/install/*.sh; do source $installer; done
@@ -38,6 +36,6 @@ sudo apt upgrade -y
 gsettings set org.gnome.desktop.screensaver lock-enabled true
 gsettings set org.gnome.desktop.session idle-delay 300
 
-# Log out to pickup changes.
-echo "Logging out to pickup changes..."
-gnome-session-quit --logout --no-prompt
+# Rebooting to pickup changes.
+echo "Rebooting to pickup changes..."
+sudo reboot
