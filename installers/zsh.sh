@@ -1,7 +1,7 @@
-# Install zsh.
+# Install Zsh.
 sudo apt install -y zsh
 
-# Set zsh as the default shell.
+# Set Zsh as the default shell.
 chsh -s $(which zsh)
 
 # Install Oh My Zsh.
