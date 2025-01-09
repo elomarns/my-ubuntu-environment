@@ -26,3 +26,8 @@ npm install -g tldr
 asdf plugin-add python
 asdf install python latest
 asdf global python latest
+
+# Install Lua
+asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
+asdf install lua latest
+asdf global lua latest # INSTALL 5.1 pra funcionar no neovim
