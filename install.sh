@@ -17,6 +17,13 @@ sudo apt install -y \
   libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 \
   redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common
 
+# Install Gum to get the name and email.
+source $MY_ENVIRONMENT_DIR/installers/gum.sh
+
+# Get the name and email.
+export NAME=$(gum input --placeholder "Type your name")
+export EMAIL=$(gum input --placeholder "Type your email")
+
 # Run installers.
 for installer in $MY_ENVIRONMENT_DIR/installers/*.sh; do source $installer; done
 
