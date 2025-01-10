@@ -3,6 +3,7 @@ sudo apt install -y fonts-font-awesome
 cd /tmp
 wget -O fontawesome.zip https://use.fontawesome.com/releases/v6.5.2/fontawesome-free-6.5.2-desktop.zip
 unzip fontawesome.zip
+mkdir -p ~/.local/share/fonts
 cp fontawesome-free-6.5.2-desktop/otfs/* ~/.local/share/fonts
 rm -rf fontawesome.zip fontawesome-free-6.5.2-desktop
 cd -
