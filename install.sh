@@ -5,15 +5,6 @@ set -e
 [ -z "$MY_ENVIRONMENT_DIR" ] && export MY_ENVIRONMENT_DIR=$HOME/Dropbox/Projetos/Ambiente/my-ubuntu-environment
 [ -z "$MY_ENVIRONMENT_CONFIG_DIR" ] && export MY_ENVIRONMENT_CONFIG_DIR=$MY_ENVIRONMENT_DIR/config
 
-# Set my personal environment variables.
-echo "\nEnter your name: "
-read name
-export NAME=$name
-
-echo "Enter your email: "
-read email
-export EMAIL=$email
-
 # Ensure computer doesn't go to sleep or lock while installing.
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0

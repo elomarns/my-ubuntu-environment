@@ -9,5 +9,5 @@ This was inspired by [Omakub](https://github.com/basecamp/omakub), but I don’t
 To use it, simply run the command below on a freshly installed Ubuntu system:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/elomarns/my-ubuntu-environment/main/boot.sh | bash
+wget -qO- https://raw.githubusercontent.com/elomarns/my-ubuntu-environment/main/boot.sh | NAME="Your Name" EMAIL="your.email@example.com" bash
 ```
