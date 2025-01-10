@@ -1,5 +1,5 @@
 # Install asdf.
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
 
 # Activate asdf.
 . $HOME/.asdf/asdf.sh
@@ -30,4 +30,4 @@ asdf global python latest
 # Install Lua
 asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
 asdf install lua latest
-asdf global lua latest # INSTALL 5.1 pra funcionar no neovim
+asdf global lua latest
