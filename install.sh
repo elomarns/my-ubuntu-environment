@@ -23,7 +23,6 @@ source $MY_ENVIRONMENT_DIR/installers/gum.sh
 # Get the name and email.
 export NAME=$(gum input --placeholder "Type your name")
 export EMAIL=$(gum input --placeholder "Type your email")
-export PASSWORD=$(gum input --placeholder "Type your password")
 
 # Run installers.
 for installer in $MY_ENVIRONMENT_DIR/installers/*.sh; do source $installer; done
