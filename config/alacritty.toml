@@ -1,0 +1,37 @@
+import = [
+  "~/.config/alacritty/themes/themes/dracula_plus.toml"
+]
+
+[font]
+size = 11.25
+
+normal = { family = "MesloLGLDZ Nerd Font Mono", style = "Regular" }
+bold = { family = "MesloLGLDZ Nerd Font Mono", style = "Bold" }
+italic = { family = "MesloLGLDZ Nerd Font Mono", style = "Italic" }
+
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Beam", blinking = "Off" }
+
+[keyboard]
+bindings = [
+  # Toggle Vi mode.
+  { key = "Escape", mods = "Control", action = "ToggleViMode" },
+
+  # Search for text.
+  { key = "F", mods = "Control", action = "SearchBackward" },
+
+  # Pasting.
+  { key = "V", mods = "Control", action = "Paste" },
+
+  # Scrolling.
+  { key = "Home", mods = "Alt", action = "ScrollToTop" },
+  { key = "End", mods = "Alt", action = "ScrollToBottom" },
+  { key = "PageUp", action = "ScrollPageUp" },
+  { key = "PageDown", action = "ScrollPageDown" },
+  { key = "PageUp", mods = "Alt", action = "ScrollHalfPageUp" },
+  { key = "PageDown", mods = "Alt", action = "ScrollHalfPageDown" }
+]
