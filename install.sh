@@ -35,5 +35,4 @@ gsettings set org.gnome.desktop.screensaver lock-enabled true
 gsettings set org.gnome.desktop.session idle-delay 300
 
 # Rebooting to pickup changes.
-echo "Rebooting to pickup changes..."
-sudo reboot
+gum confirm "Are you ready to reboot?" && sudo reboot
